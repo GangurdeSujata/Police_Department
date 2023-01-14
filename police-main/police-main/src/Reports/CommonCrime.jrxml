@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="523745a6-0516-467d-beb3-29bf6a559ecc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     commoncrime.`ID_NUMBER` AS commoncrime_ID_NUMBER,
+     commoncrime.`CRIMINAL_NAME` AS commoncrime_CRIMINAL_NAME,
+     commoncrime.`CRIMINAL_GENDER` AS commoncrime_CRIMINAL_GENDER,
+     commoncrime.`AGE` AS commoncrime_AGE,
+     commoncrime.`CRIME_TIME` AS commoncrime_CRIME_TIME,
+     commoncrime.`CRIME_DATE` AS commoncrime_CRIME_DATE,
+     commoncrime.`CRIME` AS commoncrime_CRIME,
+     commoncrime.`DUTY_OFFICER` AS commoncrime_DUTY_OFFICER
+FROM
+     `commoncrime` commoncrime]]>
+	</queryString>
+	<field name="commoncrime_ID_NUMBER" class="java.lang.Integer"/>
+	<field name="commoncrime_CRIMINAL_NAME" class="java.lang.String"/>
+	<field name="commoncrime_CRIMINAL_GENDER" class="java.lang.String"/>
+	<field name="commoncrime_AGE" class="java.lang.String"/>
+	<field name="commoncrime_CRIME_TIME" class="java.lang.String"/>
+	<field name="commoncrime_CRIME_DATE" class="java.lang.String"/>
+	<field name="commoncrime_CRIME" class="java.lang.String"/>
+	<field name="commoncrime_DUTY_OFFICER" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="1" width="80" height="103" uuid="827e326d-2d1f-4cdf-8a07-995c4ab347d0"/>
+				<imageExpression><![CDATA["F:\\JAVA\\Java Project\\PoliceDepartment\\src\\images\\ab.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="439" y="11" width="108" height="93" uuid="96322e7d-3aa1-45cc-a45b-635d9e046f1a"/>
+				<imageExpression><![CDATA["F:\\JAVA\\Java Project\\PoliceDepartment\\src\\images\\MH.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="125" y="37" width="252" height="28" forecolor="#FF9900" uuid="8b17a0ef-1f49-49e8-97a8-5823190f5763"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Common Crime Report]]></text>
+			</staticText>
+			<textField pattern="yyyy.MMMMM.dd GGG hh:mm aaa">
+				<reportElement x="161" y="84" width="191" height="20" uuid="409a3bf6-58f1-4d9e-a5e5-4eeb5d614388"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="-115" width="359" height="48" forecolor="#0033FF" uuid="80c6d7b6-e8b3-47bf-8e86-c9e8cd9bc8d5"/>
+				<textElement>
+					<font fontName="Algerian" size="32" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Police Department]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-20" y="0" width="587" height="1" uuid="75af5cc9-0798-49b5-a9ed-6fe74cc1fc9b"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="-20" y="0" width="61" height="20" uuid="67ab981d-8052-472f-95a6-044b57f9ccc9"/>
+				<text><![CDATA[ID_NUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="53" y="0" width="100" height="20" uuid="5a4eaaf4-0ddb-4a87-b85c-7cf231cdf071"/>
+				<text><![CDATA[CRIMINAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="176" y="2" width="100" height="20" uuid="2ea9018f-9f5d-4815-aeb1-16967feff0b0"/>
+				<text><![CDATA[CRIME_TIME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="2" width="100" height="20" uuid="27c027d5-ab77-46d9-8c21-1a50ca65a26e"/>
+				<text><![CDATA[CRIME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="465" y="2" width="100" height="20" uuid="958e992b-67e9-4bee-99e0-b3e18c66167b"/>
+				<text><![CDATA[DUTY_OFFICER]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="82" splitType="Stretch">
+			<line>
+				<reportElement x="-20" y="2" width="575" height="1" uuid="3c91253d-bb35-4059-9dab-fd08511e3283"/>
+			</line>
+			<textField>
+				<reportElement x="-20" y="2" width="61" height="20" uuid="bca627d2-60bb-4063-a213-d5e6489b29eb"/>
+				<textFieldExpression><![CDATA[$F{commoncrime_ID_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="53" y="2" width="108" height="40" uuid="2cae5a0b-8f37-4241-b252-596e8344a0d6"/>
+				<textFieldExpression><![CDATA[$F{commoncrime_CRIMINAL_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="53" y="42" width="84" height="20" uuid="08f89fa0-5b74-45bf-80a2-61fd21bce646"/>
+				<textFieldExpression><![CDATA[$F{commoncrime_CRIMINAL_GENDER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="53" y="62" width="84" height="20" uuid="615abda5-8e7c-4ad7-9031-5cf50594cd73"/>
+				<textFieldExpression><![CDATA[$F{commoncrime_AGE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="176" y="2" width="100" height="20" uuid="4baa761a-c5e5-4ce8-87e3-501702d9adb9"/>
+				<textFieldExpression><![CDATA[$F{commoncrime_CRIME_TIME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="176" y="22" width="100" height="20" uuid="1858163d-46b5-4a56-ac8d-178355824a0f"/>
+				<textFieldExpression><![CDATA[$F{commoncrime_CRIME_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="302" y="3" width="137" height="59" uuid="7c620e13-c065-4ecc-9ead-103989647af2"/>
+				<textFieldExpression><![CDATA[$F{commoncrime_CRIME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="3" width="100" height="39" uuid="8c295111-ad71-4d7e-baa0-da58a85c7535"/>
+				<textFieldExpression><![CDATA[$F{commoncrime_DUTY_OFFICER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="202" splitType="Stretch">
+			<image>
+				<reportElement x="302" y="21" width="209" height="176" uuid="5c456090-8498-47f5-8e65-33a46e218ece"/>
+				<imageExpression><![CDATA["F:\\JAVA\\Java Project\\PoliceDepartment\\src\\images\\stamp.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="-20" y="2" width="575" height="1" uuid="c8f7fbcf-bf7e-434f-9287-bcc36cf68f57"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

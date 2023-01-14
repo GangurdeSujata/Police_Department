@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null"   pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="aa7f0e59-6b1b-4437-999d-2304e32261c3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     mostwanted.`ID_NUMBER` AS mostwanted_ID_NUMBER,
+     mostwanted.`CRIMINAL_NAME` AS mostwanted_CRIMINAL_NAME,
+     mostwanted.`CRIMINAL_GENDER` AS mostwanted_CRIMINAL_GENDER,
+     mostwanted.`AGE` AS mostwanted_AGE,
+     mostwanted.`CRIMINAL_DETAILS` AS mostwanted_CRIMINAL_DETAILS,
+     mostwanted.`CRIME` AS mostwanted_CRIME,
+     mostwanted.`SECTION` AS mostwanted_SECTION,
+     mostwanted.`APPOINTED_OFFICER` AS mostwanted_APPOINTED_OFFICER
+FROM
+     `mostwanted` mostwanted]]>
+	</queryString>
+	<field name="mostwanted_ID_NUMBER" class="java.lang.Integer"/>
+	<field name="mostwanted_CRIMINAL_NAME" class="java.lang.String"/>
+	<field name="mostwanted_CRIMINAL_GENDER" class="java.lang.String"/>
+	<field name="mostwanted_AGE" class="java.lang.String"/>
+	<field name="mostwanted_CRIMINAL_DETAILS" class="java.lang.String"/>
+	<field name="mostwanted_CRIME" class="java.lang.String"/>
+	<field name="mostwanted_SECTION" class="java.lang.String"/>
+	<field name="mostwanted_APPOINTED_OFFICER" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="111" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="0" width="359" height="48" forecolor="#0033FF" uuid="98a460c2-60cf-4b74-b42a-73565c0468dc"/>
+				<textElement>
+					<font fontName="Algerian" size="32" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Police Department]]></text>
+			</staticText>
+			<textField pattern="yyyy.MMMMM.dd GGG hh:mm aaa">
+				<reportElement x="164" y="87" width="191" height="20" uuid="4f9de0c0-26cf-4a27-ba12-1a86075c9d5e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="108" y="48" width="312" height="28" forecolor="#FF9900" uuid="aee66275-1f6b-4dcd-8074-69df3d385ef5"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Mostwanted Criminal record]]></text>
+			</staticText>
+			<image>
+				<reportElement x="439" y="14" width="108" height="93" uuid="39fe0e44-026a-4e29-acea-004d1f727f73"/>
+				<imageExpression><![CDATA["F:\\JAVA\\Java Project\\PoliceDepartment\\src\\images\\MH.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="0" width="80" height="103" uuid="9d14c3bf-fa82-47cb-a997-992eb6acdefd"/>
+				<imageExpression><![CDATA["F:\\JAVA\\Java Project\\PoliceDepartment\\src\\images\\ab.png"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement x="-20" y="109" width="575" height="1" uuid="57eb60b6-491f-4f4f-8f66-44551701ea12"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<line>
+				<reportElement x="-20" y="32" width="587" height="1" uuid="12cafd41-65b3-4b0e-b1c1-fb0a772da9d5"/>
+			</line>
+			<staticText>
+				<reportElement x="-20" y="0" width="61" height="20" uuid="900d47cc-04a7-4564-87bd-f79c45c419e2"/>
+				<text><![CDATA[ID_NUMBER]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="52" y="0" width="100" height="20" uuid="604a21e0-b736-44dd-8fcb-828bf683240d"/>
+				<text><![CDATA[CRIMINAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="164" y="0" width="100" height="20" uuid="bc1cb6a6-98ae-49f2-872f-23c0aa97a97a"/>
+				<text><![CDATA[CRIMINAL_DETAILS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="279" y="0" width="100" height="20" uuid="d905a89f-ece9-45f3-80e4-d10e4ab6c1bc"/>
+				<text><![CDATA[CRIME]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="406" y="0" width="65" height="20" uuid="5be89329-3d47-4310-ad8a-9ef920a8d278"/>
+				<text><![CDATA[ SECTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="482" y="0" width="73" height="20" uuid="11d5fe1b-1016-46e2-af13-018e2206e730"/>
+				<text><![CDATA[ OFFICER]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<textField>
+				<reportElement x="-20" y="1" width="35" height="20" uuid="0c6b8963-03f3-438b-a33d-0bee448b8403"/>
+				<textFieldExpression><![CDATA[$F{mostwanted_ID_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="1" width="100" height="20" uuid="be656b77-e332-4dfe-a577-706d1d9051ac"/>
+				<textFieldExpression><![CDATA[$F{mostwanted_CRIMINAL_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="52" y="21" width="100" height="20" uuid="a119a16f-206d-4d58-8700-fdce19c4d6c2"/>
+				<textFieldExpression><![CDATA[$F{mostwanted_AGE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="164" y="1" width="100" height="20" uuid="06ec32d1-2b5e-4990-8a97-a3e1be79abf4"/>
+				<textFieldExpression><![CDATA[$F{mostwanted_CRIMINAL_DETAILS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="113" height="41" uuid="0b84fb1d-d92c-4d9d-a6ca-5725fb8300e6"/>
+				<textFieldExpression><![CDATA[$F{mostwanted_CRIME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="406" y="1" width="65" height="20" uuid="672f7d44-ce53-4416-9752-3c7ae63807c3"/>
+				<textFieldExpression><![CDATA[$F{mostwanted_SECTION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="482" y="1" width="73" height="20" uuid="a94eec6a-a96a-4b35-940a-640638a2ac62"/>
+				<textFieldExpression><![CDATA[$F{mostwanted_APPOINTED_OFFICER}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-20" y="46" width="575" height="1" uuid="b2123429-5283-4270-af64-4c79898537ea"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="181" splitType="Stretch">
+			<image>
+				<reportElement x="262" y="0" width="209" height="176" uuid="2ce6a151-d7f8-42bd-9b6d-9738bff73fa6"/>
+				<imageExpression><![CDATA["F:\\JAVA\\Java Project\\PoliceDepartment\\src\\images\\stamp.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</summary>
+</jasperReport>

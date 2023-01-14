@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d9986eef-dfa2-4518-8e1c-598afe031f57">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     fir.`FIR_ID` AS fir_FIR_ID,
+     fir.`CRIME_TIME` AS fir_CRIME_TIME,
+     fir.`CRIME_DATE` AS fir_CRIME_DATE,
+     fir.`CRIME_ADDRESS` AS fir_CRIME_ADDRESS,
+     fir.`COMPLAINER_NAME` AS fir_COMPLAINER_NAME,
+     fir.`COMPLAINER_DETAILS` AS fir_COMPLAINER_DETAILS,
+     fir.`VICTIM_NAME` AS fir_VICTIM_NAME,
+     fir.`VICTIM_DETAILS` AS fir_VICTIM_DETAILS,
+     fir.`CRIMINAL_NAME` AS fir_CRIMINAL_NAME,
+     fir.`CRIMINAL_DETAILS` AS fir_CRIMINAL_DETAILS,
+     fir.`COMPLAINT` AS fir_COMPLAINT,
+     fir.`INVESTIGATING_OFFICER` AS fir_INVESTIGATING_OFFICER
+FROM
+     `fir` fir]]>
+	</queryString>
+	<field name="fir_FIR_ID" class="java.lang.Integer"/>
+	<field name="fir_CRIME_TIME" class="java.lang.String"/>
+	<field name="fir_CRIME_DATE" class="java.lang.String"/>
+	<field name="fir_CRIME_ADDRESS" class="java.lang.String"/>
+	<field name="fir_COMPLAINER_NAME" class="java.lang.String"/>
+	<field name="fir_COMPLAINER_DETAILS" class="java.lang.String"/>
+	<field name="fir_VICTIM_NAME" class="java.lang.String"/>
+	<field name="fir_VICTIM_DETAILS" class="java.lang.String"/>
+	<field name="fir_CRIMINAL_NAME" class="java.lang.String"/>
+	<field name="fir_CRIMINAL_DETAILS" class="java.lang.String"/>
+	<field name="fir_COMPLAINT" class="java.lang.String"/>
+	<field name="fir_INVESTIGATING_OFFICER" class="java.lang.String"/>
+	<variable name="fir_FIR_ID_1" class="java.lang.Integer" calculation="Highest">
+		<variableExpression><![CDATA[$F{fir_FIR_ID}]]></variableExpression>
+	</variable>
+	<variable name="fir_FIR_ID_2" class="java.lang.Integer" calculation="Highest">
+		<variableExpression><![CDATA[$F{fir_FIR_ID}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="133" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="108" height="132" uuid="58f935a1-4a87-44a1-a7f8-19b736836ec2"/>
+				<imageExpression><![CDATA["F:\\JAVA\\Java Project\\PoliceDepartment\\src\\images\\ab.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="667" y="0" width="125" height="132" uuid="8bffdfc8-1974-43b5-b3c7-14c3c8931796"/>
+				<imageExpression><![CDATA["F:\\JAVA\\Java Project\\PoliceDepartment\\src\\images\\MH.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="222" y="0" width="382" height="48" forecolor="#0033FF" uuid="5e22a526-f9b7-455b-ae31-bd11ddb04615"/>
+				<textElement>
+					<font fontName="Algerian" size="32" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Police Department]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="309" y="62" width="152" height="28" forecolor="#FF9900" uuid="3670d4bc-8a46-482c-9bf8-4a1a0dace2d6"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FIR Reports]]></text>
+			</staticText>
+			<textField pattern="yyyy.MMMMM.dd GGG hh:mm aaa">
+				<reportElement x="476" y="70" width="191" height="20" uuid="da3c00cb-80ec-48a2-ab30-7a3f56950ca1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-24" y="131" width="823" height="1" uuid="1008fcad-6945-4e54-bf60-cfda8778d83c"/>
+				<graphicElement>
+					<pen lineWidth="1.25" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="-21" y="3" width="49" height="20" uuid="ffa184b0-57fd-4e8d-92b5-47cb91132396"/>
+				<text><![CDATA[FIR_ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="39" y="3" width="80" height="15" uuid="a8034128-fd09-4f4f-97c1-d012e5c3ee1c"/>
+				<text><![CDATA[Place Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="3" width="100" height="20" uuid="5e674415-feef-4476-9652-29f1f7d4b045"/>
+				<text><![CDATA[VICTIM_DETAILS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="3" width="134" height="20" uuid="bb6c90dd-d940-459b-b31d-00a4fadc00ce"/>
+				<text><![CDATA[COMPLAINER_DETAILS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="3" width="100" height="15" uuid="3f46c51c-e042-4fda-8b5d-ac0ef26657bf"/>
+				<text><![CDATA[CRIMINAL_DETAILS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="521" y="0" width="100" height="20" uuid="b003cbb9-f5fb-4e11-a602-8a6969ff23e2"/>
+				<text><![CDATA[COMPLAINT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="745" y="0" width="57" height="20" uuid="6258a242-5242-47b1-b090-4ef1e3e5f320"/>
+				<text><![CDATA[OFFICER]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="61" splitType="Stretch">
+			<textField>
+				<reportElement x="-21" y="0" width="49" height="20" uuid="1797b999-7185-4edc-a3c3-899ee4d65f8f"/>
+				<textFieldExpression><![CDATA[$F{fir_FIR_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="1" width="104" height="20" uuid="ed520d4a-a7ee-47d3-89be-292d1d311d6b"/>
+				<textFieldExpression><![CDATA[$F{fir_CRIME_TIME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="20" width="104" height="20" uuid="6e768fb0-881e-44be-b5f1-3b67580dffec"/>
+				<textFieldExpression><![CDATA[$F{fir_CRIME_DATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="28" y="40" width="91" height="20" uuid="e5dab8f1-0281-44a7-8f9e-38e897adbd74"/>
+				<textFieldExpression><![CDATA[$F{fir_CRIME_ADDRESS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="21" width="100" height="20" uuid="71966667-bafa-4ea5-b165-4c8efdc1b123"/>
+				<textFieldExpression><![CDATA[$F{fir_COMPLAINER_DETAILS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="1" width="100" height="20" uuid="98bf98ed-5d89-4ac3-9803-6cebad17df1d"/>
+				<textFieldExpression><![CDATA[$F{fir_COMPLAINER_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="285" y="21" width="100" height="20" uuid="1a57efc8-1b85-4380-9630-53897ba4ece6"/>
+				<textFieldExpression><![CDATA[$F{fir_VICTIM_DETAILS}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-21" y="1" width="834" height="1" forecolor="#999999" uuid="b82940c5-dc7a-4c87-9f37-ee433c8e81b5"/>
+			</line>
+			<textField>
+				<reportElement x="285" y="2" width="100" height="20" uuid="479546fa-badf-4370-9ca6-d23f7c0abd9b"/>
+				<textFieldExpression><![CDATA[$F{fir_VICTIM_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="20" width="100" height="20" uuid="152465ab-3091-4a55-97af-f443ae1609f5"/>
+				<textFieldExpression><![CDATA[$F{fir_CRIMINAL_DETAILS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="4" width="100" height="17" uuid="e639fde1-e9fa-4e90-aab7-80529f5e2fae"/>
+				<textFieldExpression><![CDATA[$F{fir_CRIMINAL_NAME}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="521" y="2" width="210" height="58" uuid="8a7a2b37-e90a-4768-9a33-86af8b4e19f0"/>
+				<textFieldExpression><![CDATA[$F{fir_COMPLAINT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="745" y="1" width="54" height="20" uuid="e7f8d471-a33f-4349-aef4-03fa8555cba7"/>
+				<textFieldExpression><![CDATA[$F{fir_INVESTIGATING_OFFICER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="276" splitType="Stretch">
+			<rectangle>
+				<reportElement x="191" y="0" width="295" height="40" uuid="5e2c1c9e-5274-4c28-9014-4ba40b18ae24"/>
+			</rectangle>
+			<textField>
+				<reportElement x="361" y="12" width="100" height="20" uuid="a68ecc9f-ad3d-40f9-ae08-ba85bba8491e"/>
+				<textFieldExpression><![CDATA[$V{fir_FIR_ID_2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="251" y="12" width="100" height="20" uuid="451b7d9f-50e9-423f-a657-26c4712fdfd8"/>
+				<text><![CDATA[Total FIR:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="539" y="12" width="128" height="122" uuid="85d3a8b8-3ea3-4565-95bf-1ebd45100020"/>
+				<imageExpression><![CDATA["F:\\JAVA\\Java Project\\PoliceDepartment\\src\\images\\stamp.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null"   pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7318731c-377c-4ed0-8866-b8cab331d4a5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     courtorder.`ID` AS courtorder_ID,
+     courtorder.`CDATE` AS courtorder_CDATE,
+     courtorder.`cORDER` AS courtorder_cORDER
+FROM
+     `courtorder` courtorder]]>
+	</queryString>
+	<field name="courtorder_ID" class="java.lang.Integer"/>
+	<field name="courtorder_CDATE" class="java.lang.String"/>
+	<field name="courtorder_cORDER" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="108" splitType="Stretch">
+			<staticText>
+				<reportElement x="69" y="0" width="359" height="48" forecolor="#0033FF" uuid="8d6d716a-2669-4932-a9c7-400db2e16f5e"/>
+				<textElement>
+					<font fontName="Algerian" size="32" isBold="true" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Police Department]]></text>
+			</staticText>
+			<textField pattern="yyyy.MMMMM.dd GGG hh:mm aaa">
+				<reportElement x="164" y="88" width="191" height="20" uuid="42b0a54e-786c-4ea4-a53c-346978c483af"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="191" y="48" width="152" height="28" forecolor="#FF9900" uuid="99cd3658-d496-4c10-9a88-199472a4d79c"/>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Court Orders]]></text>
+			</staticText>
+			<image>
+				<reportElement x="428" y="5" width="108" height="93" uuid="85f4226c-fbe5-44c0-baac-be2a8e65ea69"/>
+				<imageExpression><![CDATA["F:\\JAVA\\Java Project\\PoliceDepartment\\src\\images\\MH.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="0" y="5" width="80" height="103" uuid="4648b979-f2f2-4862-b156-e5d93a1cadb8"/>
+				<imageExpression><![CDATA["F:\\JAVA\\Java Project\\PoliceDepartment\\src\\images\\ab.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<line>
+				<reportElement x="3" y="0" width="552" height="2" uuid="8bf171cb-dc69-493b-978f-8f0e34aba943"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="13" y="2" width="100" height="20" uuid="debe26fd-eb24-4c3a-878a-3cc35c47f659"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="139" y="2" width="100" height="20" uuid="08807427-f95b-4c10-8a31-4e7468ea6370"/>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="300" y="2" width="100" height="20" uuid="3f8ce08f-66c8-409c-a379-389c7966a3cc"/>
+				<text><![CDATA[ORDER]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<line>
+				<reportElement x="-16" y="0" width="571" height="1" uuid="e358fcb3-c75c-4a26-9518-ac6f4bbb743b"/>
+			</line>
+			<line>
+				<reportElement x="-16" y="43" width="571" height="1" uuid="9591431d-4d62-41f6-9bfa-6d2325c4c3a5"/>
+			</line>
+			<textField>
+				<reportElement x="13" y="1" width="100" height="20" uuid="59973bbc-d869-41be-a246-9d98ad11b93d"/>
+				<textFieldExpression><![CDATA[$F{courtorder_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="139" y="5" width="100" height="20" uuid="c72d2081-0b20-4059-a2a7-24f43d44e8dc"/>
+				<textFieldExpression><![CDATA[$F{courtorder_CDATE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="300" y="1" width="255" height="42" uuid="2d422166-3c99-4b5f-adf2-e1c7e9a36a2b"/>
+				<textFieldExpression><![CDATA[$F{courtorder_cORDER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="231" splitType="Stretch">
+			<image>
+				<reportElement x="288" y="12" width="209" height="176" uuid="cef96cbb-ed5e-4bb8-9c2f-d2710b07c73e"/>
+				<imageExpression><![CDATA["F:\\JAVA\\Java Project\\PoliceDepartment\\src\\images\\stamp.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</summary>
+</jasperReport>
